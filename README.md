@@ -5,11 +5,11 @@
 ![taskmanager](https://github.com/user-attachments/assets/98079ebc-9800-46ad-b8f3-18408686ccfb)
 
 # I have implemented this project using ReactJs 
-I have implemented features like:-
-1-Add Task 
-2-Edit Task
-3-Delete Task
-4-Task History
-5-Task Details
-6-Set Priority of Task
-7-Mark as Completed When Task is Completed.
+# I have implemented features like:-
+# 1-Add Task 
+# 2-Edit Task
+# 3-Delete Task
+# 4-Task History
+# 5-Task Details
+# 6-Set Priority of Task
+# 7-Mark as Completed When Task is Completed.
