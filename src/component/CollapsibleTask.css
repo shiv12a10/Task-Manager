@@ -1,0 +1,276 @@
+.collapsible-task {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animation for breaking effect when deleting */
+.breaking::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+  animation: explode 1s forwards;
+}
+
+.breaking .task-header,
+.breaking .task-details,
+.breaking .task-actions {
+  animation: disappear 1s forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Task Header Styles */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.task-priority {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.priority-low {
+  color: green;
+}
+
+.priority-medium {
+  color: orange;
+}
+
+.priority-high {
+  color: red;
+}
+
+/* Task Details Styles */
+.task-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.task-details-input {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* Task Actions Styles */
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.task-actions button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Input Styles */
+.task-title-input,
+.task-details-input,
+.select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+/* Modal styles for edit mode */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 170px;
+  padding-top: 7px;
+  margin-left: 160px;
+  border-radius: 15px;
+}
+
+.modal-input,
+.modal-textarea,
+.modal-select {
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.modal-textarea {
+  height: 400px;
+  resize: none;
+  width: 400px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button:hover {
+  background-color: #ddd;
+}
+/* Modal styles for viewing mode */
+.view-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.view-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 1200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view-modal h3 {
+  background-color: #003366;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.view-modal-content {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.view-modal-content p {
+  margin: 10px 0;
+}
+
+.view-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.view-modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.view-modal-actions button:hover {
+  background-color: #0056b3;
+}
+.head{
+  display: flex;
+  gap: 20px;
+}
+.head h3{
+  width: 200px;
+}
+.head p{
+  margin-top: 29px;
+  font-size: 20px;
+  font: bold;
+}

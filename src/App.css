@@ -1,38 +1,247 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  max-width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
   text-align: center;
+  /* margin: auto; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+}
+.heading h1{
+  margin-top: 15px;
+}
+.title-btn{
+  display: flex;
+  gap: 5px;
+}
+.title-btn input{
+  width: 3500px;
+}
+.App1 {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-task {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fdf8e7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputt {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+.inputt textarea{
+  background-color: #fff;
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.2s;
+  height: 380px;
+}
+.inputt input,
+.select {
+  background-color: #fff;
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.2s;
+}
+
+.inputt textarea:focus,
+.inputt input:focus,
+.select:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
   color: white;
+  background-color: #003366;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #00509e;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.taskList {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.task-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-list h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.search-bar .select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 53px;
+  margin-top: 0px;
+}
+
+.history {
+  margin-top: 20px;
+}
+
+.history h2 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.history-item {
+  background-color: #f7f9fc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-item p {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.history-item button {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.history-item button:hover {
+  background-color: #c9302c;
+}
+.history-toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.history-toggle-btn:hover {
+  background-color: #00509e;
+}
+
+.task-history {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  width: 300px;
+  max-height: 90%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  padding: 15px;
+  z-index: 999;
+}
+
+.task-history h2 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.history-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.history-item p {
+  margin: 0;
+  color: #333;
+}
+
+.history-item button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.history-item button:hover {
+  background-color: #c9302c;
 }
